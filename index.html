@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Ashenafi Negash Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Ashenafi Negash - Data Analyst & Web Scraper specializing in data automation and analysis.">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        .contact-info p {
+            font-size: 1.2em;
+        }
+        .contact-info a {
+            font-size: 1.5em;
+        }
+        .icon.brands.alt {
+            font-size: 2em;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper" class="fade-in">
+        
+        <div id="intro">
+            <h1>Ashenafi Negash Portfolio</h1>
+            <p>Web Scraper and Data Analyst</p>
+        </div>
+        
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="index.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+        
+        <div id="main">
+            <article class="post featured">
+                <header class="major">
+                    <div class="about-container">
+                        <div class="about-text">
+                            <h2>Hi there!</h2>
+                            <p>
+                                I'm <strong>Ashenafi Negash</strong>, a passionate data analyst and web scraper dedicated to transforming data into actionable insights. 
+                                With expertise in automating data extraction and creating analytical solutions, I thrive on solving complex problems and delivering data-driven results.
+                            </p>
+                        </div>
+                        <img src="images/pic01.jpg" alt="Ashenafi Negash - Data Analyst & Web Scraper" class="profile-pic">
+                    </div>
+                </header>
+            </article>
+        </div>
+        
+        <footer id="footer">
+            <section>
+                <h2>Message Me</h2>
+                <form id="contact-form" action="https://formspree.io/f/mqaebyze" method="POST">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="name">Full Name</label>
+                            <input type="text" name="name" id="name" required />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" id="email" required />
+                        </div>
+                        <div class="field">
+                            <label for="message">Your Message</label>
+                            <textarea name="message" id="message" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><button type="submit">Send Message</button></li>
+                    </ul>
+                    <p id="response-message" style="display:none; color: green;">Thank you! Your message has been sent.</p>
+                </form>
+            </section>
+            
+            
+            <section>
+                <h2>Contact Information</h2>
+                <div class="contact-info">
+                    <p style="font-size: 1.0em; font-weight: bold;"><strong>Location:</strong> Addis Ababa, Ethiopia</p>
+                    <p style="font-size: 1.0em; font-weight: bold;"><strong>Phone:</strong> (+251) 917858360</p>
+                    <p style="font-size: 1.0em; font-weight: bold;"><strong>Email:</strong> <a href="mailto:ashenafinegashz@gmail.com" style="font-size: 1.0em;">ashenafinegashz@gmail.com</a></p>
+                    <p style="font-size: 1.0em; font-weight: bold;"><strong>Social Links:</strong>
+                        <a href="https://www.linkedin.com/in/ashenafinegash/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin" style="margin-right: 20px;"></a>
+                        <a href="https://github.com/Ashenafizerihun" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"></a>
+                    </p>
+                </div>
+            </section>
+            
+            
+        </footer>
+        
+        <p>Ashenafi Negash &copy; 2025/ All rights reserved.</p>
+        
+        <div id="copyright">
+            <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+        </div>
+    </div>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        var form = this;
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Accept": "application/json"
+            }
+        }).then(response => {
+            if (response.ok) {
+                document.getElementById("response-message").style.display = "block";
+                form.reset();
+            } else {
+                alert("Oops! Something went wrong.");
+            }
+        }).catch(error => {
+            alert("Oops! There was a problem submitting the form.");
+        });
+    });
+    </script>
+</body>
+</html>
